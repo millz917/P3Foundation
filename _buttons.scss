@@ -1,0 +1,129 @@
+// buttons
+
+@mixin button(){
+  @include border-radius($button-radius);
+  font-family: $headline-font;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  background-color: $theme-color-3;
+  padding: 20px 34px;
+  font-size: 28px;
+  line-height: 1.25;
+  border: 0;
+  color: $button-color;
+  vertical-align: middle;
+  white-space: normal;
+  text-align: center;
+  a {
+    color: $button-color;
+  }
+  &:hover {
+    background-color: lighten($theme-color-3, 8);
+    color: $button-color;
+    a {
+      color: $button-color;
+    }
+  }
+  &:active {
+    background-color: $theme-color-1;
+  }
+}
+
+.button, .small_button, .submit-button, .success-button, .submit-link, .tag-list li a {
+  @include button;
+}
+
+.button, .submit-button, .success-button, .submit-link {
+  margin-top: 1.5rem;
+}
+
+.form {
+  .button, .submit-button, .submit-link {
+    margin-top: 10px;
+  }
+}
+
+.button + .button {
+  margin-left: 5px;
+}
+
+.tiny-button {
+  font-size: 85%;
+  padding: 2px 7px;
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+// red button, commonly used to cancel actions
+
+.destroy-link {
+  background-color: $red;
+  &:hover {
+    background-color: lighten($red, 5);
+  }
+}
+
+.neutral-link {
+  background-color: $yellow;
+  &:hover {
+    background-color: lighten($yellow, 5);
+  }
+}
+
+// read more link
+
+.read-more, .read_more {
+  display: block;
+  font-weight: bold;
+}
+
+.share-container {
+  .small-button {
+    min-height: 24px;
+    margin-top: 8px;
+  }
+  // button to close share box
+  .share-close {
+    float: right;
+    margin: -13px -18px 0 0;
+    padding: 5px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    font-size: 30px;
+    line-height: 7px;
+  }
+}
+
+a[class^="login-button"], a[class*=" login-button"] {
+  @include button;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 37px;
+  border: 0;
+  width: 100%;
+  max-width: 415px;
+  i {
+    &:before {
+      margin-left: 0;
+      vertical-align: -9%;
+    }
+    font-size: 20px;
+    line-height: 1;
+  }
+}
+
+a.login-button-facebook {
+  background-color: #3e629f;
+  &:hover {
+    background-color: lighten(#3e629f, 5);
+  }
+}
+
+a.login-button-twitter {
+  background-color: #009ad7;
+  &:hover {
+    background-color: lighten(#009ad7, 5);
+  }
+}

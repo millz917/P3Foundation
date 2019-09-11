@@ -1,0 +1,52 @@
+@mixin mobile-nav {
+  font-family: $nav-font;
+  height: 100%;
+  width: 16em;
+  position: absolute;
+  top: 0;
+  left: -16em;
+  background: $sidebar-background;
+  color: $sidebar-color;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    &.blurred {
+      & > a {
+        @include opacity(1);
+      }
+    }
+    a {
+      display: block;
+      padding: 0.8em 1.5em;
+      color: $sidebar-color;
+      background: $sidebar-background;
+      border-bottom: 1px solid darken($sidebar-background, 15);
+      &:hover {
+        color: lighten($sidebar-color,8);
+        background: darken($sidebar-background,8);
+      }
+    }
+  }
+  .sub {
+    display: none;
+    li {
+      background-color: darken($theme-color-4, 5);
+      &:last-child {
+        border-bottom: none;
+      }
+      a {
+        background: darken($sidebar-background, 8);
+        &:hover {
+          background: darken($sidebar-background, 3);
+        }
+      }
+    }
+  }
+}
